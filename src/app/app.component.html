@@ -1,3 +1,5 @@
-<input type="text" [(ngModel)]="title">
-<br>
-{{ title | titleCase }}
+
+<like
+    [likesCount]="tweet.likesCount"
+    [isActive]="tweet.isLiked"
+></like>
