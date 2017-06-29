@@ -28,17 +28,25 @@ export class PostsComponent implements OnInit {
     input.value = '';
 
     this.service.createPost(post)
-      .subscribe(response => {
-        post['id'] = response.json().id;
-        this.posts.splice(0, 0, post);
-      });
+      .subscribe(
+        response => {
+          post['id'] = response.json().id;
+            this.posts.splice(0, 0, post);
+          },
+          error => {
+            alert('An unexpected error occurred.');
+          });
   }
 
   updatePost(post) {
     this.service.updatePost(post)
-      .subscribe(response => {
-        console.log(response.json());
-      })
+      .subscribe(
+        response => {
+          console.log(response.json());
+        },
+        error => {
+          alert('An unexpected error occurred.');
+        });
   }
 
   deletePost(post) {
