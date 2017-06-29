@@ -17,6 +17,15 @@ export class PostsComponent {
       });
   }
 
+
+
+
+
+
+
+
+
+
   createPost(input: HTMLInputElement) {
     let post = { title: input.value };
     input.value = '';
