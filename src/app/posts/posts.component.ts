@@ -14,8 +14,12 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.service.getPosts()
-      .subscribe(response => {
-        this.posts = response.json();
+      .subscribe(
+        response => {
+          this.posts = response.json();
+        }, 
+        error => {
+          alert('Could not get the posts from the server.');
       });
   }
 
@@ -38,10 +42,17 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post) {
-    this.service.deletePost(post.id)
-      .subscribe(response => {
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
-      });
+    this.service.deletePost(345)
+      .subscribe(
+        response => {
+          let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1);
+        },
+        (error: Response) => {
+          if (error.status == 404)
+            alert('This post has already been deleted.');
+          else
+            alert('An unexpected error occurred.');
+        });
   }
 }
