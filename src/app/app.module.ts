@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SummaryPipe } from './summary.pipe';
 import { AuthorsService } from './authors.service';
@@ -43,7 +44,8 @@ import { PostsComponent } from './posts/posts.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     CoursesService,
