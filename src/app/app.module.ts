@@ -1,4 +1,4 @@
-import { GithubFollowersService } from './github-followers.service';
+import { GithubFollowersService } from './services/github-followers.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
