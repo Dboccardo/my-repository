@@ -25,6 +25,10 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component'; 
 
 @NgModule({
   declarations: [
@@ -45,12 +49,21 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
     ChangePasswordComponent,
     PostsComponent,
     GithubFollowersComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'followers', component: GithubFollowersComponent },
+      { path: 'profile/:username/:id', component: GithubProfileComponent, data: { title: 'My Title'} },
+      { path: 'posts', component: PostsComponent }
+    ], { enableTracing: false })
   ],
   providers: [
     PostService,
