@@ -28,7 +28,8 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { GithubProfileComponent } from './github-profile/github-profile.component'; 
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component'; 
 
 @NgModule({
   declarations: [
@@ -52,18 +53,13 @@ import { GithubProfileComponent } from './github-profile/github-profile.componen
     NavbarComponent,
     HomeComponent,
     GithubProfileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'followers', component: GithubFollowersComponent },
-      { path: 'profile/:username/:id', component: GithubProfileComponent, data: { title: 'My Title'} },
-      { path: 'posts', component: PostsComponent }
-    ], { enableTracing: false })
+    HttpModule
   ],
   providers: [
     PostService,
