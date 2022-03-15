@@ -26,3 +26,11 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+In order to  start the project  on the loca project 
+
+a) git remote add origin https://Dboccardo:token@github.com/Dboccardo/my-repository.git
+b) git push origin master
+c) ng build --base-href="https://Dboccardo.github.io/my-repository/"
+d) ngh --no-silent
+
