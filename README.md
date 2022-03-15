@@ -27,7 +27,9 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-In order to  start the project  on the loca project 
+
+## Local Instruction
+In order to  start the project  on the loca project after  installin ngh => npm i  -g angular-cli-ghpages
 
 a) git remote add origin https://Dboccardo:token@github.com/Dboccardo/my-repository.git
 b) git push origin master
